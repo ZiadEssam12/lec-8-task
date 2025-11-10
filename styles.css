@@ -240,6 +240,29 @@ body {
   background-color: #0d5bb5;
 }
 
+/* Mobile Search Bar (hidden on large screens) */
+.search-bar-mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  .search-bar-mobile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 95vw;
+    margin: 30px auto 0 auto;
+    align-items: stretch;
+
+    & .btn-search {
+      grid-column: span 2;
+    }
+  }
+}
+
 /* Services Section */
 .services {
   padding: 80px 40px;
@@ -497,6 +520,7 @@ body {
 @media (max-width: 768px) {
   .covid-warning {
     padding: 16px 20px;
+    width: calc(100vw - 32px);
   }
 
   .covid-notice {
@@ -678,10 +702,10 @@ body {
 .hamburger {
   display: none;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 32px;
-  height: 32px;
+  height: 16px;
   cursor: pointer;
   z-index: 200;
 }
@@ -689,8 +713,7 @@ body {
   display: block;
   width: 24px;
   height: 3px;
-  margin: 4px 0;
-  background: #1576d6;
+  background: white;
   border-radius: 2px;
   transition: 0.3s;
 }
